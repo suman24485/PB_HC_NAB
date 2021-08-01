@@ -4,6 +4,7 @@ node {
     sh "git clone https://github.com/Coveros/helloworld"
     sh "echo $WORKSPACE"
     sh "ls $WORKSPACE"
+    sh "cd $WORKSPACE"
     }
     stage "Build"
     sh "mvn clean package"
