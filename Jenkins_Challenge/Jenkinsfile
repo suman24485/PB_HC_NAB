@@ -1,6 +1,8 @@
 node {
     stage ('Checkout'){
     sh "git clone https://github.com/Coveros/helloworld"
+    sh "echo $WORKSPACE"
+    sh "rm -rf $WORKSPACE/*"
     sh "ls $WORKSPACE"
     }
     stage "Build"
