@@ -4,6 +4,7 @@ node {
     sh "ls $WORKSPACE"
     }
     stage "Build"
+    sh "mvn clean package"
     stage "Package"
     stage "Execute"
     stage "Notify"
