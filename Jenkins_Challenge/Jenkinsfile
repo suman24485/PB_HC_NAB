@@ -2,7 +2,7 @@ node {
     stage "Checkout"{
     steps{
     sh "git clone https://github.com/Coveros/helloworld"
-    sh "ls $WORKSPACE
+    sh "ls $WORKSPACE"
     }
     }
     stage "Build"
