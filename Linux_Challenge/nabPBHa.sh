@@ -36,4 +36,7 @@ cat << EOF >> testPayload.json
 EOF
 cat testPayload.json
 curl -vX POST https://google.com:443 -d @testPayload.json --header "Content-Type: application/json" > /dev/null
-echo "status:" $?
+which ansible
+if [ $? != 0 ]; then
+	echo "Ansible is not installed"
+fi
