@@ -1,0 +1,15 @@
+portal/post/permissionsets/Licencing_Super_User.permissionset-meta.xml
+portal/post/permissionsets/Person.permissionset-meta.xml
+portal/post/permissionsets/Silica_Team.permissionset-meta.xml
+portal/post/profiles/Admin.profile-meta.xml
+portal/post/profiles/Advisory.profile-meta.xml
+portal/post/profiles/HealthandSafety.profile-meta.xml
+portal/post/profiles/IntegrationUser.profile-meta.xml
+portal/post/profiles/LicencingRestricted Profile.profile-meta.xml
+portal/post/profiles/MarketingCloudIntegrationUserProfile.profile-meta.xml
+portal/post/profiles/PremiumsProfile.profile-meta.xml
+portal/post/profiles/PublicWebsiteUser.profile-meta.xml
+portal/post/profiles/WSVBase.profile-meta.xml
+portal/post/profiles/WorkSafeL2Admin.profile-meta.xml
+portal/post/profiles/WorkSafeReadOnly.profile-meta.xml
+portal/post/profiles/WorksafePortalUser.profile-meta.xml
