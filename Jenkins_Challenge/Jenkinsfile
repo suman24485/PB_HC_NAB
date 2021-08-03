@@ -1,28 +1,20 @@
 node {
     stage ('Checkout'){
-    sh "rm -rf $WORKSPACE/*"
-    sh "git clone https://github.com/Coveros/helloworld"
-    sh "echo $WORKSPACE"
-    sh "ls $WORKSPACE"
-    sh "cd $WORKSPACE"
-    }
-    stage "Build"
-    sh "cd $WORKSPACE && mvn clean package"
-    stage "Package"
-    stage "Execute"
-    stage "Notify"
-    
-    // Make the output directory.
-    //sh "mkdir -p output"
-
-    // Write an useful file, which is needed to be archived.
-    //writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
-
-    // Write an useless file, which is not needed to be archived.
-    //writeFile file: "output/uselessfile.md", text: "This file is useless, no need to archive it."
-
-    //stage "Archive build output"
-    
-    // Archive the build output artifacts.
-    //archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
-}
+        sh "rm -rf $WORKSPACE/*"
+	    sh "git clone https://github.com/Coveros/helloworld"
+	        }
+		    stage ('Clean')
+		        sh "cd $WORKSPACE/helloworld && mvn clean"
+				
+				    stage ('Package')
+				        sh "cd $WORKSPACE/helloworld && mvn package"
+					    
+					        stage ('Execute'){
+						    sh "cd $WORKSPACE/helloworld && java -cp target/helloworld-1.1.jar com.coveros.demo.helloworld.HelloWorld "
+						        }
+							    
+							        stage ('Notify'){
+								    emailext body: 'Test Message',
+								        subject: '$BUILD_DISPLAY_NAME - $currentResult',
+									    to: 'suman25485@gmail.com'}
+									    }
