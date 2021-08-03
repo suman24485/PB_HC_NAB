@@ -7,7 +7,7 @@ node {
     sh "cd $WORKSPACE"
     }
     stage "Build"
-    sh "mvn clean package"
+    sh "cd $WORKSPACE && mvn clean package"
     stage "Package"
     stage "Execute"
     stage "Notify"
